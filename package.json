@@ -1,0 +1,32 @@
+{
+  "name": "analytics-visualization",
+  "version": "1.0.0",
+  "description": "Analytics Visualization - Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KumarBhot/analytics-visualization.git"
+  },
+  "author": "Kumar Bhot <kumarbhot@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KumarBhot/analytics-visualization/issues"
+  },
+  "homepage": "https://github.com/KumarBhot/analytics-visualization#readme",
+  "dependencies": {
+    "highcharts": "^6.0.6",
+    "redux-observable": "^0.18.0",
+    "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.3.0",
+    "json-server": "^0.12.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.11.0"
+  }
+}
