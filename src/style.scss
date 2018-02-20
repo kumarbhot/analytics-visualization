@@ -1,0 +1,17 @@
+html,
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+
+    // Improve font quality on a page;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #F4F4F4;
+}
+
+@import './app/AppComponent.scss';
+

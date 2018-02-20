@@ -4,6 +4,10 @@
   "description": "Analytics Visualization - Web Application",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack -w --config webpack.dev.js",
+    "start": "node server.js",
+    "api": "node api/server.js",
     "test": "test"
   },
   "repository": {
@@ -17,15 +21,45 @@
   },
   "homepage": "https://github.com/KumarBhot/analytics-visualization#readme",
   "dependencies": {
-    "highcharts": "^6.0.6",
+    "highcharts": "^6.0.7",
+    "ramda": "^0.25.0",
+    "redux": "^3.7.2",
     "redux-observable": "^0.18.0",
+    "rxjs": "^5.5.6",
     "vue": "^2.5.13",
+    "vue-class-component": "^6.2.0",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vue-rx": "^5.0.0",
     "vuetify": "^1.0.1"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-vue-jsx": "^3.5.1",
     "babel-preset-env": "^1.6.1",
+    "compression-webpack-plugin": "^1.1.7",
+    "copy-webpack-plugin": "^4.4.1",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.7",
+    "hapi": "^17.2.0",
+    "html-webpack-exclude-assets-plugin": "^0.0.5",
+    "html-webpack-plugin": "^2.30.1",
+    "inert": "^5.1.0",
     "jest": "^22.3.0",
     "json-server": "^0.12.1",
-    "webpack": "^3.11.0"
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.2",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "vue-loader": "^14.1.1",
+    "vue-template-compiler": "^2.5.13",
+    "vue-template-loader": "^0.4.0",
+    "webpack": "^3.11.0",
+    "webpack-bundle-analyzer": "^2.10.0"
   }
 }
