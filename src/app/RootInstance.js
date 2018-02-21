@@ -17,7 +17,7 @@ import AppComponent from './AppComponent.vue';
  */
 export function makeRootInstance (router, store) {
     return {
-        el: '#app',
+        el: '.app',
 
         name: 'RootInstance',
 

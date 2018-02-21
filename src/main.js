@@ -57,4 +57,5 @@ const rootInstance = makeRootInstance(router, store$);
 // Tslint will cause error if `_` is not prefixed to app
 const _app = new Vue(rootInstance);
 
+// ESlint will cause error for unused variable declaration :)
 console.log(_app);

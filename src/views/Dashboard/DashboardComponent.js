@@ -1,33 +1,46 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import Chart from '../Chart/Chart.vue';
+import AppHeader from '../../components/AppHeader/AppHeader.vue';
+import PageHeader from '../../components/PageHeader/PageHeader.vue';
+import Insights from '../../components/Insights/Insights.vue';
+import Insight from '../../components/Insight/Insight.vue';
+import Chart from '../../components/Chart/Chart.vue';
 import withRender from './DashboardComponent.html';
-import { getData } from '../../api';
+import { getSummary, getUniqUsers } from '../../api';
 
 @withRender
 @Component({
     components: {
+        'app-header': AppHeader,
+        'page-header': PageHeader,
+        'insights': Insights,
+        'insight': Insight,
         'chart': Chart
     }
 })
-
 export default class DashboardComponent extends Vue {
     data () {
         return {
-            reclen: 0
+            summary: [],
+            fetchingSummary: true,
+            uniqUsers: [],
+            fetchingUniqUsers: true
         };
     }
 
     mounted () {
         const self = this;
 
-        return getData()
+        getSummary()
             .then(data => {
-                self.reclen = data.length;
+                self.summary = data;
+                self.fetchingSummary = false;
             });
-    }
 
-    getData () {
-        return getData();
+        getUniqUsers()
+            .then(data => {
+                self.uniqUsers = data;
+                self.fetchingUniqUsers = false;
+            });
     }
 }

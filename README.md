@@ -4,6 +4,11 @@ A single page web application that presents the analytics data to visualize the 
 
 ## Getting started
 
+### Prerequisites
+
+- Node.js 8.9.1^
+- `npm install yarn -g`
+
 ### Running the Web Application in Development mode
 
 ```

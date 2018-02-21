@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
+        "allowJs": true,
         "experimentalDecorators": true,
-        "allowJs": true
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     }
 }

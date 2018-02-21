@@ -5,7 +5,20 @@ md-up/down = for screen larger/smaller than midium size
 lg-up/down = for screen larger/smaller than large size -->
 
 <div class="dashboard-page">
-    Number of records {{ reclen }}
+    <app-header></app-header>
+    <page-header>Dashboard</page-header>
 
-    <chart></chart>
+    <insights>
+        <!-- Overall Summarized Insight -->
+        <insight name="Summary">
+            <chart
+                v-bind:data="summary"
+                v-bind:fetching="fetchingSummary"
+                ></chart>
+        </insight>
+
+        <!-- Unique User Insight -->
+        <insight name="Unique Users">
+        </insight>
+    </insights>
 </div>
