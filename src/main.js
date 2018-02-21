@@ -24,6 +24,10 @@ import { chartEpic } from './effects/chartEffects';
 
 import { rootReducer } from './state/root';
 
+import Vuetify from 'vuetify';
+import colors from 'vuetify/es5/util/colors';
+import 'vuetify/dist/vuetify.min.css';
+
 // Disable warning
 Vue.config.productionTip = false;
 
@@ -31,6 +35,14 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(VueRx);
 Vue.use(Storex);
+Vue.use(Vuetify, {
+    theme: {
+        primary: colors.purple.base,
+        secondary: colors.grey.darken1,
+        accent: colors.shades.black,
+        error: colors.red.accent3
+    }
+});
 
 // Combine all the epics/effects to create a single merged epic
 // Equivalent to Observable.merge()

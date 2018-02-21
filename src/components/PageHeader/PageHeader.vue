@@ -1,5 +1,5 @@
 <template>
-    <h2 class="page-header">
+    <h2 class="page-header display-1">
         <slot></slot>
     </h2>
 </template>

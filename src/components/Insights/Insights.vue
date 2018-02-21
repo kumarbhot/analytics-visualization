@@ -1,5 +1,5 @@
 <template>
-    <div class="insights">
+    <div class="insights grid-list-md">
         <slot></slot>
     </div>
 </template>
