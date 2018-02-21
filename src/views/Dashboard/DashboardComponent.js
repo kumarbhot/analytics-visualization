@@ -4,9 +4,10 @@ import AppHeader from '../../components/AppHeader/AppHeader.vue';
 import PageHeader from '../../components/PageHeader/PageHeader.vue';
 import Insights from '../../components/Insights/Insights.vue';
 import Insight from '../../components/Insight/Insight.vue';
-import Chart from '../../components/Chart/Chart.vue';
+import SummaryChart from '../../components/Charts/Summary/SummaryChart.vue';
+import UniqueUsersChart from '../../components/Charts/UniqueUsers/UniqueUsersChart.vue';
 import withRender from './DashboardComponent.html';
-import { getSummary, getUniqUsers } from '../../api';
+import { getSummary, getUniqueUsers } from '../../api';
 
 @withRender
 @Component({
@@ -15,7 +16,8 @@ import { getSummary, getUniqUsers } from '../../api';
         'page-header': PageHeader,
         'insights': Insights,
         'insight': Insight,
-        'chart': Chart
+        'summary-chart': SummaryChart,
+        'unique-users-chart': UniqueUsersChart
     }
 })
 export default class DashboardComponent extends Vue {
@@ -23,7 +25,7 @@ export default class DashboardComponent extends Vue {
         return {
             summary: [],
             fetchingSummary: true,
-            uniqUsers: [],
+            uniqueUsers: [],
             fetchingUniqUsers: true
         };
     }
@@ -37,9 +39,9 @@ export default class DashboardComponent extends Vue {
                 self.fetchingSummary = false;
             });
 
-        getUniqUsers()
+        getUniqueUsers()
             .then(data => {
-                self.uniqUsers = data;
+                self.uniqueUsers = data;
                 self.fetchingUniqUsers = false;
             });
     }

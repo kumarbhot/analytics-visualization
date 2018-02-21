@@ -6,7 +6,7 @@ export function getSummary () {
         .catch(error => error);
 }
 
-export function getUniqUsers () {
+export function getUniqueUsers () {
     return fetch('/api/logs?_page=1&_limit=20&Category=Track%20Order', {
         method: 'GET'
     })

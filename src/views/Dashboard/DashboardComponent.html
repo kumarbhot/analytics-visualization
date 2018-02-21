@@ -11,14 +11,18 @@ lg-up/down = for screen larger/smaller than large size -->
     <insights>
         <!-- Overall Summarized Insight -->
         <insight name="Summary">
-            <chart
+            <summary-chart
                 v-bind:data="summary"
                 v-bind:fetching="fetchingSummary"
-                ></chart>
+            ></summary-chart>
         </insight>
 
         <!-- Unique User Insight -->
         <insight name="Unique Users">
+            <unique-users-chart
+                v-bind:data="uniqueUsers"
+                v-bind:fetching="fetchingUniqUsers"
+            ></unique-users-chart>
         </insight>
     </insights>
 </div>

@@ -3,8 +3,8 @@ import { Component } from 'vue-property-decorator';
 import * as Highcharts from 'highcharts';
 
 /**
- * Renders a chart with given data
- * @class Chart
+ * Renders the summary chart with given data
+ * @class SummaryChart
  */
 @Component({
     props: {
@@ -24,7 +24,7 @@ import * as Highcharts from 'highcharts';
         }
     }
 })
-export default class Chart extends Vue {
+export default class SummaryChart extends Vue {
     data () {
         return {};
     }
