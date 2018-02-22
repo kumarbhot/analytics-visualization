@@ -1,5 +1,5 @@
 export function getSummary () {
-    return fetch('/api/logs?_page=1&_limit=20', {
+    return fetch('/api/logs?_page=1&_limit=100', {
         method: 'GET'
     })
         .then(response => response.json())
