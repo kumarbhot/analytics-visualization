@@ -7,10 +7,14 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
 
-body {
-    background-color: #F4F4F4;
+    background-color: #ffffff;
 }
 
 @import './app/AppComponent.scss';
+@import './components/AppHeader/AppHeader.scss';
+@import './components/Charts/Summary/SummaryChart.scss';
+@import './components/Charts/UniqueUsers/UniqueUsersChart.scss';
+@import './components/Insight/Insight.scss';
+@import './components/Insights/Insights.scss';
+@import './components/PageHeader/PageHeader.scss';
