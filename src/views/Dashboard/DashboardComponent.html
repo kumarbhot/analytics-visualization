@@ -13,7 +13,7 @@ lg-up/down = for screen larger/smaller than large size -->
         <insight name="Summary">
             <v-layout row wrap>
                 <v-flex xs6 sm2>
-                    <v-dialog
+                    <!-- <v-dialog
                         ref="dialogStart"
                         persistent
                         v-model="modalStart"
@@ -21,7 +21,7 @@ lg-up/down = for screen larger/smaller than large size -->
                         full-width
                         width="290px"
                         :return-value.sync="sDate"
-                    >
+                    > -->
                         <v-text-field
                             slot="activator"
                             label="Start Date"
@@ -29,15 +29,15 @@ lg-up/down = for screen larger/smaller than large size -->
                             prepend-icon="event"
                             readonly
                         ></v-text-field>
-                        <v-date-picker v-model="sDate">
+                        <!-- <v-date-picker v-model="sDate">
                             <v-spacer></v-spacer>
                             <v-btn flat color="primary" @click="modalStart = false">Cancel</v-btn>
                             <v-btn flat color="primary" @click="$refs.dialogStart.save(sDate)">OK</v-btn>
                         </v-date-picker>
-                    </v-dialog>
+                    </v-dialog> -->
                 </v-flex>
                 <v-flex xs6 sm2>
-                    <v-dialog
+                    <!-- <v-dialog
                         ref="dialogEnd"
                         persistent
                         v-model="modalEnd"
@@ -45,7 +45,7 @@ lg-up/down = for screen larger/smaller than large size -->
                         full-width
                         width="290px"
                         :return-value.sync="eDate"
-                    >
+                    > -->
                         <v-text-field
                             slot="activator"
                             label="End Date"
@@ -53,21 +53,21 @@ lg-up/down = for screen larger/smaller than large size -->
                             prepend-icon="event"
                             readonly
                         ></v-text-field>
-                        <v-date-picker v-model="eDate">
+                        <!-- <v-date-picker v-model="eDate">
                             <v-spacer></v-spacer>
                             <v-btn flat color="primary" @click="modalEnd = false">Cancel</v-btn>
                             <v-btn flat color="primary" @click="$refs.dialogEnd.save(eDate)">OK</v-btn>
                         </v-date-picker>
-                    </v-dialog>
+                    </v-dialog> -->
                 </v-flex>
-                </v-layout>
+            </v-layout>
             <summary-chart
                 v-bind:data="summary"
                 v-bind:fetching="fetchingSummary"
             ></summary-chart>
         </insight>
 
-        <v-divider inset></v-divider>
+        <hr />
 
         <!-- Unique User Insight -->
         <insight name="Unique Users">

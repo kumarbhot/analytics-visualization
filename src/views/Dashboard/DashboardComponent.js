@@ -41,6 +41,9 @@ export default class DashboardComponent extends Vue {
             .then(data => {
                 self.summary = data;
                 self.fetchingSummary = false;
+
+                self.sDate = data[0].Date;
+                self.eDate = data[data.length - 1].Date;
             });
 
         getUniqueUsers()
