@@ -1,5 +1,4 @@
 /**
- * This is the only component written in JSX format.
  * This component need router to be associated
  */
 // import Vue, { ComponentOptions, CreateElement } from 'vue';

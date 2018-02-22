@@ -26,7 +26,11 @@ export default class DashboardComponent extends Vue {
             summary: [],
             fetchingSummary: true,
             uniqueUsers: [],
-            fetchingUniqUsers: true
+            fetchingUniqUsers: true,
+            sDate: null,
+            eDate: null,
+            modalStart: false,
+            modalEnd: false
         };
     }
 

@@ -26,7 +26,6 @@ import { rootReducer } from './state/root';
 
 import Vuetify from 'vuetify';
 import colors from 'vuetify/es5/util/colors';
-import 'vuetify/dist/vuetify.min.css';
 
 // Disable warning
 Vue.config.productionTip = false;

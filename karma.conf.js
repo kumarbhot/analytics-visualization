@@ -17,7 +17,7 @@ webpackConfig.module.rules.push({
     exclude: /node_modules/
 });
 
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -29,7 +29,7 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             // run all in dev mode
-            'test/**/*.ts'
+            'test/**/*.js'
         ],
 
         // list of files to exclude
@@ -37,14 +37,7 @@ module.exports = function(config) {
 
         // preprocess matching files before serving them to the browser
         preprocessors: {
-            // 'src/**/*.ts': ['webpack', 'sourcemap'],
-            // 'test/jsonapi/*.ts': ['webpack', 'sourcemap']
-            // 'test/**/*.js': ['webpack', 'sourcemap'],
-            'test/**/*.ts': ['webpack', 'sourcemap'],
-        },
-
-        mime: {
-            'text/x-typescript': ['ts','tsx']
+            'test/**/*.js': ['webpack', 'sourcemap']
         },
 
         // Which webpack config to use

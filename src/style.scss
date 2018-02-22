@@ -1,20 +1,506 @@
 html,
 body {
-    font-family: sans-serif;
-    line-height: 1.5;
+  font-family: sans-serif;
+  line-height: 1.5;
 
-    // Improve font quality on a page;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  // Improve font quality on a page;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
-@import './app/AppComponent.scss';
-@import './components/AppHeader/AppHeader.scss';
-@import './components/Charts/Summary/SummaryChart.scss';
-@import './components/Charts/UniqueUsers/UniqueUsersChart.scss';
-@import './components/Insight/Insight.scss';
-@import './components/Insights/Insights.scss';
-@import './components/PageHeader/PageHeader.scss';
+@import "~vuetify/dist/vuetify.min.css";
+// @import '~vuetify/src/stylus/main';
+@import "./app/AppComponent.scss";
+@import "./components/AppHeader/AppHeader.scss";
+@import "./components/Charts/Summary/SummaryChart.scss";
+@import "./components/Charts/UniqueUsers/UniqueUsersChart.scss";
+@import "./components/Insight/Insight.scss";
+@import "./components/Insights/Insights.scss";
+@import "./components/PageHeader/PageHeader.scss";
+
+// TODO - make stylus loader work for vuetify colors (till then, hack below)
+.dialog {
+    background-color: #ffffff;
+}
+a {
+  color: #1867c0;
+}
+.primary {
+  background-color: #1867c0 !important;
+  border-color: #1867c0 !important;
+}
+.primary--text {
+  color: #1867c0 !important;
+}
+.primary--text input,
+.primary--text textarea {
+  caret-color: #1867c0 !important;
+}
+.primary--after::after {
+  background: #1867c0 !important;
+}
+.primary.lighten-5 {
+  background-color: #c0ecff !important;
+  border-color: #c0ecff !important;
+}
+.primary--text.text--lighten-5 {
+  color: #c0ecff !important;
+}
+.primary--text.text--lighten-5 input,
+.primary--text.text--lighten-5 textarea {
+  caret-color: #c0ecff !important;
+}
+.primary.lighten-5--after::after {
+  background: #c0ecff !important;
+}
+.primary.lighten-4 {
+  background-color: #a2cfff !important;
+  border-color: #a2cfff !important;
+}
+.primary--text.text--lighten-4 {
+  color: #a2cfff !important;
+}
+.primary--text.text--lighten-4 input,
+.primary--text.text--lighten-4 textarea {
+  caret-color: #a2cfff !important;
+}
+.primary.lighten-4--after::after {
+  background: #a2cfff !important;
+}
+.primary.lighten-3 {
+  background-color: #84b4ff !important;
+  border-color: #84b4ff !important;
+}
+.primary--text.text--lighten-3 {
+  color: #84b4ff !important;
+}
+.primary--text.text--lighten-3 input,
+.primary--text.text--lighten-3 textarea {
+  caret-color: #84b4ff !important;
+}
+.primary.lighten-3--after::after {
+  background: #84b4ff !important;
+}
+.primary.lighten-2 {
+  background-color: #6599f9 !important;
+  border-color: #6599f9 !important;
+}
+.primary--text.text--lighten-2 {
+  color: #6599f9 !important;
+}
+.primary--text.text--lighten-2 input,
+.primary--text.text--lighten-2 textarea {
+  caret-color: #6599f9 !important;
+}
+.primary.lighten-2--after::after {
+  background: #6599f9 !important;
+}
+.primary.lighten-1 {
+  background-color: #4480dc !important;
+  border-color: #4480dc !important;
+}
+.primary--text.text--lighten-1 {
+  color: #4480dc !important;
+}
+.primary--text.text--lighten-1 input,
+.primary--text.text--lighten-1 textarea {
+  caret-color: #4480dc !important;
+}
+.primary.lighten-1--after::after {
+  background: #4480dc !important;
+}
+.primary.darken-1 {
+  background-color: #004fa4 !important;
+  border-color: #004fa4 !important;
+}
+.primary--text.text--darken-1 {
+  color: #004fa4 !important;
+}
+.primary--text.text--darken-1 input,
+.primary--text.text--darken-1 textarea {
+  caret-color: #004fa4 !important;
+}
+.primary.darken-1--after::after {
+  background: #004fa4 !important;
+}
+.primary.darken-2 {
+  background-color: #00398a !important;
+  border-color: #00398a !important;
+}
+.primary--text.text--darken-2 {
+  color: #00398a !important;
+}
+.primary--text.text--darken-2 input,
+.primary--text.text--darken-2 textarea {
+  caret-color: #00398a !important;
+}
+.primary.darken-2--after::after {
+  background: #00398a !important;
+}
+.primary.darken-3 {
+  background-color: #002570 !important;
+  border-color: #002570 !important;
+}
+.primary--text.text--darken-3 {
+  color: #002570 !important;
+}
+.primary--text.text--darken-3 input,
+.primary--text.text--darken-3 textarea {
+  caret-color: #002570 !important;
+}
+.primary.darken-3--after::after {
+  background: #002570 !important;
+}
+.primary.darken-4 {
+  background-color: #001057 !important;
+  border-color: #001057 !important;
+}
+.primary--text.text--darken-4 {
+  color: #001057 !important;
+}
+.primary--text.text--darken-4 input,
+.primary--text.text--darken-4 textarea {
+  caret-color: #001057 !important;
+}
+.primary.darken-4--after::after {
+  background: #001057 !important;
+}
+.secondary {
+  background-color: #5cbbf6 !important;
+  border-color: #5cbbf6 !important;
+}
+.secondary--text {
+  color: #5cbbf6 !important;
+}
+.secondary--text input,
+.secondary--text textarea {
+  caret-color: #5cbbf6 !important;
+}
+.secondary--after::after {
+  background: #5cbbf6 !important;
+}
+.secondary.lighten-5 {
+  background-color: #f6ffff !important;
+  border-color: #f6ffff !important;
+}
+.secondary--text.text--lighten-5 {
+  color: #f6ffff !important;
+}
+.secondary--text.text--lighten-5 input,
+.secondary--text.text--lighten-5 textarea {
+  caret-color: #f6ffff !important;
+}
+.secondary.lighten-5--after::after {
+  background: #f6ffff !important;
+}
+.secondary.lighten-4 {
+  background-color: #d7ffff !important;
+  border-color: #d7ffff !important;
+}
+.secondary--text.text--lighten-4 {
+  color: #d7ffff !important;
+}
+.secondary--text.text--lighten-4 input,
+.secondary--text.text--lighten-4 textarea {
+  caret-color: #d7ffff !important;
+}
+.secondary.lighten-4--after::after {
+  background: #d7ffff !important;
+}
+.secondary.lighten-3 {
+  background-color: #b9ffff !important;
+  border-color: #b9ffff !important;
+}
+.secondary--text.text--lighten-3 {
+  color: #b9ffff !important;
+}
+.secondary--text.text--lighten-3 input,
+.secondary--text.text--lighten-3 textarea {
+  caret-color: #b9ffff !important;
+}
+.secondary.lighten-3--after::after {
+  background: #b9ffff !important;
+}
+.secondary.lighten-2 {
+  background-color: #9af3ff !important;
+  border-color: #9af3ff !important;
+}
+.secondary--text.text--lighten-2 {
+  color: #9af3ff !important;
+}
+.secondary--text.text--lighten-2 input,
+.secondary--text.text--lighten-2 textarea {
+  caret-color: #9af3ff !important;
+}
+.secondary.lighten-2--after::after {
+  background: #9af3ff !important;
+}
+.secondary.lighten-1 {
+  background-color: #7cd7ff !important;
+  border-color: #7cd7ff !important;
+}
+.secondary--text.text--lighten-1 {
+  color: #7cd7ff !important;
+}
+.secondary--text.text--lighten-1 input,
+.secondary--text.text--lighten-1 textarea {
+  caret-color: #7cd7ff !important;
+}
+.secondary.lighten-1--after::after {
+  background: #7cd7ff !important;
+}
+.secondary.darken-1 {
+  background-color: #38a0d9 !important;
+  border-color: #38a0d9 !important;
+}
+.secondary--text.text--darken-1 {
+  color: #38a0d9 !important;
+}
+.secondary--text.text--darken-1 input,
+.secondary--text.text--darken-1 textarea {
+  caret-color: #38a0d9 !important;
+}
+.secondary.darken-1--after::after {
+  background: #38a0d9 !important;
+}
+.secondary.darken-2 {
+  background-color: #0086bd !important;
+  border-color: #0086bd !important;
+}
+.secondary--text.text--darken-2 {
+  color: #0086bd !important;
+}
+.secondary--text.text--darken-2 input,
+.secondary--text.text--darken-2 textarea {
+  caret-color: #0086bd !important;
+}
+.secondary.darken-2--after::after {
+  background: #0086bd !important;
+}
+.secondary.darken-3 {
+  background-color: #006da2 !important;
+  border-color: #006da2 !important;
+}
+.secondary--text.text--darken-3 {
+  color: #006da2 !important;
+}
+.secondary--text.text--darken-3 input,
+.secondary--text.text--darken-3 textarea {
+  caret-color: #006da2 !important;
+}
+.secondary.darken-3--after::after {
+  background: #006da2 !important;
+}
+.secondary.darken-4 {
+  background-color: #005588 !important;
+  border-color: #005588 !important;
+}
+.secondary--text.text--darken-4 {
+  color: #005588 !important;
+}
+.secondary--text.text--darken-4 input,
+.secondary--text.text--darken-4 textarea {
+  caret-color: #005588 !important;
+}
+.secondary.darken-4--after::after {
+  background: #005588 !important;
+}
+.accent {
+  background-color: #005caf !important;
+  border-color: #005caf !important;
+}
+.accent--text {
+  color: #005caf !important;
+}
+.accent--text input,
+.accent--text textarea {
+  caret-color: #005caf !important;
+}
+.accent--after::after {
+  background: #005caf !important;
+}
+.accent.lighten-5 {
+  background-color: #b5dfff !important;
+  border-color: #b5dfff !important;
+}
+.accent--text.text--lighten-5 {
+  color: #b5dfff !important;
+}
+.accent--text.text--lighten-5 input,
+.accent--text.text--lighten-5 textarea {
+  caret-color: #b5dfff !important;
+}
+.accent.lighten-5--after::after {
+  background: #b5dfff !important;
+}
+.accent.lighten-4 {
+  background-color: #97c3ff !important;
+  border-color: #97c3ff !important;
+}
+.accent--text.text--lighten-4 {
+  color: #97c3ff !important;
+}
+.accent--text.text--lighten-4 input,
+.accent--text.text--lighten-4 textarea {
+  caret-color: #97c3ff !important;
+}
+.accent.lighten-4--after::after {
+  background: #97c3ff !important;
+}
+.accent.lighten-3 {
+  background-color: #79a8ff !important;
+  border-color: #79a8ff !important;
+}
+.accent--text.text--lighten-3 {
+  color: #79a8ff !important;
+}
+.accent--text.text--lighten-3 input,
+.accent--text.text--lighten-3 textarea {
+  caret-color: #79a8ff !important;
+}
+.accent.lighten-3--after::after {
+  background: #79a8ff !important;
+}
+.accent.lighten-2 {
+  background-color: #5a8ee7 !important;
+  border-color: #5a8ee7 !important;
+}
+.accent--text.text--lighten-2 {
+  color: #5a8ee7 !important;
+}
+.accent--text.text--lighten-2 input,
+.accent--text.text--lighten-2 textarea {
+  caret-color: #5a8ee7 !important;
+}
+.accent.lighten-2--after::after {
+  background: #5a8ee7 !important;
+}
+.accent.lighten-1 {
+  background-color: #3974cb !important;
+  border-color: #3974cb !important;
+}
+.accent--text.text--lighten-1 {
+  color: #3974cb !important;
+}
+.accent--text.text--lighten-1 input,
+.accent--text.text--lighten-1 textarea {
+  caret-color: #3974cb !important;
+}
+.accent.lighten-1--after::after {
+  background: #3974cb !important;
+}
+.accent.darken-1 {
+  background-color: #004594 !important;
+  border-color: #004594 !important;
+}
+.accent--text.text--darken-1 {
+  color: #004594 !important;
+}
+.accent--text.text--darken-1 input,
+.accent--text.text--darken-1 textarea {
+  caret-color: #004594 !important;
+}
+.accent.darken-1--after::after {
+  background: #004594 !important;
+}
+.accent.darken-2 {
+  background-color: #002f7a !important;
+  border-color: #002f7a !important;
+}
+.accent--text.text--darken-2 {
+  color: #002f7a !important;
+}
+.accent--text.text--darken-2 input,
+.accent--text.text--darken-2 textarea {
+  caret-color: #002f7a !important;
+}
+.accent.darken-2--after::after {
+  background: #002f7a !important;
+}
+.accent.darken-3 {
+  background-color: #001c60 !important;
+  border-color: #001c60 !important;
+}
+.accent--text.text--darken-3 {
+  color: #001c60 !important;
+}
+.accent--text.text--darken-3 input,
+.accent--text.text--darken-3 textarea {
+  caret-color: #001c60 !important;
+}
+.accent.darken-3--after::after {
+  background: #001c60 !important;
+}
+.accent.darken-4 {
+  background-color: #000048 !important;
+  border-color: #000048 !important;
+}
+.accent--text.text--darken-4 {
+  color: #000048 !important;
+}
+.accent--text.text--darken-4 input,
+.accent--text.text--darken-4 textarea {
+  caret-color: #000048 !important;
+}
+.accent.darken-4--after::after {
+  background: #000048 !important;
+}
+.error {
+  background-color: #ff5252 !important;
+  border-color: #ff5252 !important;
+}
+.error--text {
+  color: #ff5252 !important;
+}
+.error--text input,
+.error--text textarea {
+  caret-color: #ff5252 !important;
+}
+.error--after::after {
+  background: #ff5252 !important;
+}
+.info {
+  background-color: #2196f3 !important;
+  border-color: #2196f3 !important;
+}
+.info--text {
+  color: #2196f3 !important;
+}
+.info--text input,
+.info--text textarea {
+  caret-color: #2196f3 !important;
+}
+.info--after::after {
+  background: #2196f3 !important;
+}
+.success {
+  background-color: #4caf50 !important;
+  border-color: #4caf50 !important;
+}
+.success--text {
+  color: #4caf50 !important;
+}
+.success--text input,
+.success--text textarea {
+  caret-color: #4caf50 !important;
+}
+.success--after::after {
+  background: #4caf50 !important;
+}
+.warning {
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+}
+.warning--text {
+  color: #ffc107 !important;
+}
+.warning--text input,
+.warning--text textarea {
+  caret-color: #ffc107 !important;
+}
+.warning--after::after {
+  background: #ffc107 !important;
+}
