@@ -7,7 +7,12 @@ export function getSummary () {
 }
 
 export function getUniqueUsers () {
-    return fetch('/api/logs?_page=1&_limit=20&Category=Track%20Order', {
+    const filter = encodeURIComponent('Date=7/1/2017&' +
+        'BotChannel=FacebookMsgr&' +
+        'Subcategory=Intent&' +
+        'Category=Store Questions');
+
+    return fetch('/api/logs?' + filter, {
         method: 'GET'
     })
         .then(response => response.json())

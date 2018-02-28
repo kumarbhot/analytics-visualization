@@ -20,6 +20,7 @@ body {
 @import "./components/Insight/Insight.scss";
 @import "./components/Insights/Insights.scss";
 @import "./components/PageHeader/PageHeader.scss";
+@import "./components/Filters/Summary/SummaryFilters.scss";
 
 // TODO - make stylus loader work for vuetify colors (till then, hack below)
 .dialog {

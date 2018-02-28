@@ -1,9 +1,3 @@
-<!-- some class definations
-vs-up = for screen larger than very small size
-sm-up/down = for screen larger/smaller than small size
-md-up/down = for screen larger/smaller than midium size
-lg-up/down = for screen larger/smaller than large size -->
-
 <div class="dashboard-page fluid">
     <app-header></app-header>
     <page-header>Dashboard</page-header>
@@ -11,56 +5,11 @@ lg-up/down = for screen larger/smaller than large size -->
     <insights>
         <!-- Overall Summarized Insight -->
         <insight name="Summary">
-            <v-layout row wrap>
-                <v-flex xs6 sm2>
-                    <!-- <v-dialog
-                        ref="dialogStart"
-                        persistent
-                        v-model="modalStart"
-                        lazy
-                        full-width
-                        width="290px"
-                        :return-value.sync="sDate"
-                    > -->
-                        <v-text-field
-                            slot="activator"
-                            label="Start Date"
-                            v-model="sDate"
-                            prepend-icon="event"
-                            readonly
-                        ></v-text-field>
-                        <!-- <v-date-picker v-model="sDate">
-                            <v-spacer></v-spacer>
-                            <v-btn flat color="primary" @click="modalStart = false">Cancel</v-btn>
-                            <v-btn flat color="primary" @click="$refs.dialogStart.save(sDate)">OK</v-btn>
-                        </v-date-picker>
-                    </v-dialog> -->
-                </v-flex>
-                <v-flex xs6 sm2>
-                    <!-- <v-dialog
-                        ref="dialogEnd"
-                        persistent
-                        v-model="modalEnd"
-                        lazy
-                        full-width
-                        width="290px"
-                        :return-value.sync="eDate"
-                    > -->
-                        <v-text-field
-                            slot="activator"
-                            label="End Date"
-                            v-model="eDate"
-                            prepend-icon="event"
-                            readonly
-                        ></v-text-field>
-                        <!-- <v-date-picker v-model="eDate">
-                            <v-spacer></v-spacer>
-                            <v-btn flat color="primary" @click="modalEnd = false">Cancel</v-btn>
-                            <v-btn flat color="primary" @click="$refs.dialogEnd.save(eDate)">OK</v-btn>
-                        </v-date-picker>
-                    </v-dialog> -->
-                </v-flex>
-            </v-layout>
+            <summary-filters
+                v-bind:s-date="sumSDate"
+                v-bind:e-date="sumEDate"
+                v-bind:bot-channels="sumBotChannels"
+            ></summary-filters>
             <summary-chart
                 v-bind:data="summary"
                 v-bind:fetching="fetchingSummary"
@@ -71,6 +20,12 @@ lg-up/down = for screen larger/smaller than large size -->
 
         <!-- Unique User Insight -->
         <insight name="Unique Users">
+            <uniq-users-filters
+                v-bind:week="uniWeek"
+                v-bind:bot-channels="uniBotChannels"
+                v-bind:sub-categories="uniSubCategories"
+                v-bind:categories="uniCategories"
+            ></uniq-users-filters>
             <unique-users-chart
                 v-bind:data="uniqueUsers"
                 v-bind:fetching="fetchingUniqUsers"

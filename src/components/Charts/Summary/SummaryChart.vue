@@ -1,5 +1,5 @@
 <template>
-    <div class="chart"></div>
+    <div class="summary-chart"></div>
 </template>
 
 <script src="./SummaryChart.js"></script>

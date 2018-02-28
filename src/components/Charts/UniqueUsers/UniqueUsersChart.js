@@ -37,7 +37,7 @@ export default class UniqueUsersChart extends Vue {
         if (data.length > 0) {
             Highcharts.chart(this.$el, {
                 title: {
-                    text: 'Unique Users'
+                    text: 'Unique Users over a week'
                 },
 
                 subtitle: {
@@ -57,16 +57,14 @@ export default class UniqueUsersChart extends Vue {
 
                 plotOptions: {
                     series: {
-                        label: {
-                            connectorAllowed: false
-                        },
-                        pointStart: 2010
+                        pointStart: 1,
+                        pointInterval: 1
                     }
                 },
 
                 series: [{
                     name: 'Unique Users',
-                    data: [17, 23, 11, 2, 25, 10, 11, 14, 9, 20]
+                    data: [17, 23, 11, 2, 25, 10, 11]
                 }],
 
                 responsive: {
